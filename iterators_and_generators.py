@@ -1,5 +1,4 @@
 
-
 # Iterators
 # ------------
 """An iterator is an object that can be looped through one item at a time using next().
