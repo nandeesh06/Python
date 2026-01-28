@@ -41,3 +41,12 @@ the label "x" is in two different scopes but always reference the same "value".
 """
 
 
+def outer():
+    x="name"
+    def inner():
+        print(x)
+    return inner
+
+outer= outer()
+print(type(outer))
+

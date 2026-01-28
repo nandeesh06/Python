@@ -1,24 +1,29 @@
 
+"""What are decorator?
+    Decorator is function which is used modify or add extra work for another function without changing its source
+    code."""
 
-
-def outer(fn):
-
-    def inner(*args, **kwargs):
-        print("Decorating the add function")
-        fn(*args,**kwargs)
-        print("Decoration Completed")
+def dec_function(fn):
+    print("I'm outer function")
+    def inner():
+        print("I'm inside inner function and will execute first")
+        fn()
+        print("After running function")
     return inner
 
-def add(a,b):
-    """ add function which add two numbers"""
-    return a+b
+def actual_function():
+    print("I'm the actual function")
 
+# calling the actual_function with decorator
+actual_function = dec_function(actual_function)
+actual_function()
 
+# We can use @ symbol to simplify the above method
+@dec_function
+def actual_function():
+    print("I'm the actual function")
 
-add = outer(add)
-add(1,2)
+# and just call the actual function
+actual_function()
 
-
-print(add.__name__)
-print(help(add))
 
