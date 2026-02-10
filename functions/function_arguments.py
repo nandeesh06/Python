@@ -51,3 +51,5 @@ def myFun(*args, **kwargs):
 # Function call with both types of arguments
 myFun('Hey', 'Welcome', first='Nandeesh', last='KV')
 
+
+# Note *args returns tuple and **kwargs return dict
